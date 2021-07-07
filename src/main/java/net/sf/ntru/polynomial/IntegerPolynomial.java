@@ -833,10 +833,11 @@ public class IntegerPolynomial implements Polynomial {
         if (modulus == 2048)
           for (int i=0; i<coeffs.length; i++)
               coeffs[i] = (coeffs[i]*3) & 2047;
-
-        for (int i=0; i<coeffs.length; i++) {
-            coeffs[i] *= 3;
-            coeffs[i] %= modulus;
+        else{
+            for (int i=0; i<coeffs.length; i++) {
+                coeffs[i] *= 3;
+                coeffs[i] %= modulus;
+            }
         }
     }
     
